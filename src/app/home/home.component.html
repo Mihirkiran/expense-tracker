@@ -1,0 +1,13 @@
+<app-header></app-header>
+<br>
+<br>
+<h5>Expenses:</h5>
+<br>
+<ul class="list-group" *ngFor="let expense of expenses">
+  <li class="list-group-item">
+    Expense 
+    of amount {{ expense.amount }} 
+    of type {{ expense.type }}
+    with description {{ expense.description }}
+  </li>  
+</ul>

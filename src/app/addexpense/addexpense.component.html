@@ -1,0 +1,28 @@
+<app-header></app-header>
+<br>
+<br>
+<h5>Add Expense</h5>
+<br>
+<form>
+<div class="form-group">
+    <label for="amount">Amount:</label>
+    <input type="text" id="amount" class="form-control" name="amount" [(ngModel)] = "amount">
+</div>
+<div class="form-group">
+    <label for="type">Type of Expense:</label>
+    <select name="type" id="type" class="form-control" [(ngModel)] = "type">
+        <option>Insurance</option>
+        <option>Groceries</option>
+        <option>Investment</option>
+        <option>EMI Payment</option>
+        <option>Bill Payment</option>
+        <option>Miscellaneous</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="description">Description:</label>
+    <input type="text" id="description" class="form-control" [(ngModel)] = "description">
+</div>
+<br>
+<button type="submit" name="Add" class="btn btn-primary" (click)='addExpense()'>Add</button>
+</form>
