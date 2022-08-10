@@ -15,7 +15,6 @@ export class ExpensesService {
   expenses: Expense[] = [];
 
   constructor(private http: HttpClient) {
-    console.log(Math.random());
   }
 
   getExpenses() {

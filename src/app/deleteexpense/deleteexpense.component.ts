@@ -26,12 +26,7 @@ export class DeleteexpenseComponent implements OnInit {
     this.expensesservice.deleteExpense(this.selectedExpense)
     .subscribe(
       () => {
-        let expenseArray = this.expenses;
-        for (let i = 0; i < expenseArray.length; i++) {
-          if(expenseArray[i].id === this.selectedExpense) {
-            expenseArray.splice(i);
-          }
-        }
+        window.location.reload();
         console.log('Successfully Deleted');
       }
     );

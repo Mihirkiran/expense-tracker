@@ -10,6 +10,7 @@ import { Expense } from '../shared/expense.model';
 export class HomeComponent implements OnInit {
 
   expenses: Expense[] = [];
+  totalExpense: number = 0;
   
   constructor(private expensesservice: ExpensesService) {
   }
@@ -18,6 +19,9 @@ export class HomeComponent implements OnInit {
     this.expensesservice.getExpenses()
     .subscribe(
       (expenses) => {
+        for(let expense of expenses) {
+          this.totalExpense += parseInt(expense.amount);
+        }
         this.expenses = expenses;
       }
     );

@@ -1,13 +1,23 @@
 <app-header></app-header>
 <br>
 <br>
-<h5>Expenses:</h5>
+<h5>Total Expenses: {{ totalExpense }}</h5>
 <br>
-<ul class="list-group" *ngFor="let expense of expenses">
-  <li class="list-group-item">
-    Expense 
-    of amount {{ expense.amount }} 
-    of type {{ expense.type }}
-    with description {{ expense.description }}
-  </li>  
-</ul>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">S.No.</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let expense of expenses; let i=index">
+      <th scope="row">{{ i }}</th>
+      <td>{{ expense.amount }}</td>
+      <td>{{ expense.type }}</td>
+      <td>{{ expense.description }}</td>
+    </tr>
+  </tbody>
+</table>

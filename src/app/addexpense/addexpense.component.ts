@@ -9,7 +9,7 @@ import { Expense } from '../shared/expense.model';
 })
 export class AddexpenseComponent implements OnInit {
   
-  amount: number = 0;
+  amount: string = '';
   type: string = '';
   description: string = '';
 
@@ -18,7 +18,10 @@ export class AddexpenseComponent implements OnInit {
   ngOnInit(): void {}
 
   addExpense() {
-    this.expensesservice.addExpense(new Expense(this.amount, this.type, this.description));
+    if(this.amount != '' && this.type != '' && !Number.isNaN(Number(this.amount))) {
+      console.log('xyz');
+      this.expensesservice.addExpense(new Expense(this.amount, this.type, this.description));
+    }
   }
 
 }
